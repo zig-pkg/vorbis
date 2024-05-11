@@ -1,0 +1,24 @@
+.{
+    .name = "libvorbis",
+    .version = "1.3.7",
+    .minimum_zig_version = "0.12.0",
+    .dependencies = .{
+        .libogg = .{
+            .url = "https://github.com/zig-pkg/ogg/archive/3aaeedd0824b8f8b2dfa64e1d2866d5b014053e0.tar.gz",
+            .hash = "1220d65fbf188012a7374a3dea472c5ec39cb297a4c0431f49db8e82821c72196a0c",
+        },
+    },
+    .paths = .{
+        "COPYING",
+        "CHANGES",
+        "AUTHORS",
+        "README.md",
+        "build.zig",
+        "build.zig.zon",
+        "contrib",
+        "examples",
+        "include",
+        "lib",
+        "vq",
+    },
+}
