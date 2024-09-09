@@ -15,8 +15,8 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     lib.linkLibrary(libogg_dep.artifact("ogg"));
-    lib.addIncludePath(.{ .path = "include" });
-    lib.addIncludePath(.{ .path = "lib" });
+    lib.addIncludePath(b.path("include"));
+    lib.addIncludePath(b.path("lib"));
     lib.addCSourceFiles(.{
         .files = &.{
             "lib/analysis.c",
@@ -45,6 +45,6 @@ pub fn build(b: *std.Build) void {
         },
     });
     lib.linkLibC();
-    lib.installHeadersDirectory(.{ .path = "include/vorbis" }, "vorbis", .{});
+    lib.installHeadersDirectory(b.path("include/vorbis"), "vorbis", .{});
     b.installArtifact(lib);
 }
